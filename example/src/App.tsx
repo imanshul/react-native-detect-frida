@@ -13,26 +13,27 @@ export default function App() {
 
   React.useEffect(() => {
     if (isAndroid()) {
-      isDeviceRooted().then((result) => {
-        setRooted(result.isRooted ? 'Rooted' : 'Not Rooted');
-        setCheckStatus(result.checkStatus);
-      }).catch(e => {
-        setRooted('Error: ' + e);
-      });
+      isDeviceRooted()
+        .then((result) => {
+          setRooted(result.isRooted ? 'Rooted' : 'Not Rooted');
+          setCheckStatus(result.checkStatus);
+        })
+        .catch((e) => {
+          setRooted('Error: ' + e);
+        });
     }
-
   }, []);
 
   const _renderItem = (item: CheckStatus) => {
     return (
       <View style={styles.itemStyle}>
-        <Text style={{ textTransform: 'capitalize' }}>
-          {item.name}
-        </Text>
-        <Text style={{
-          color: item.state ? 'red' : 'green',
-          textTransform: 'capitalize',
-        }}>
+        <Text style={{ textTransform: 'capitalize' }}>{item.name}</Text>
+        <Text
+          style={{
+            color: item.state ? 'red' : 'green',
+            textTransform: 'capitalize',
+          }}
+        >
           {item.state ? 'Detected' : 'Secured'}
         </Text>
       </View>
@@ -42,9 +43,11 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>{rooted}</Text>
-      <FlatList data={checkStatus}
-                keyExtractor={(item, index) => (item.id + index).toString()}
-                renderItem={({ item }) => _renderItem(item)} />
+      <FlatList
+        data={checkStatus}
+        keyExtractor={(item, index) => (item.id + index).toString()}
+        renderItem={({ item }) => _renderItem(item)}
+      />
     </View>
   );
 }

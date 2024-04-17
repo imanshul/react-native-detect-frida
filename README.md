@@ -24,9 +24,9 @@ import { isDeviceRooted } from 'react-native-detect-frida';
 const result = await isDeviceRooted();
 ```
 
-Method | Returns | Description
----|---|---
-`isDeviceRooted` | `Promise<RootCheckResult>` | Returns promise containing key whether device is rooted or not
+| Method           | Returns                    | Description                                                    |
+| ---------------- | -------------------------- | -------------------------------------------------------------- |
+| `isDeviceRooted` | `Promise<RootCheckResult>` | Returns promise containing key whether device is rooted or not |
 
 ```ts
 interface CheckStatus {
@@ -39,26 +39,25 @@ interface RootCheckResult {
   isRooted: boolean;
   checkStatus: CheckStatus[];
 }
-
 ```
 
 # Root checks
 
 These are the native checks:
 
-* TEST KEYS
-* DEV KEYS
-* NON RELEASE KEYS
-* DANGEROUS PROPS
-* PERMISSIVE SELINUX
-* SU EXISTS
-* SUPERUSER APK
-* SU BINARY
-* BUSYBOX BINARY
-* XPOSED
-* RESETPROP(EXPERIMENTAL)
-* WRONG PATH PERMITION
-* HOOKS
+- TEST KEYS
+- DEV KEYS
+- NON RELEASE KEYS
+- DANGEROUS PROPS
+- PERMISSIVE SELINUX
+- SU EXISTS
+- SUPERUSER APK
+- SU BINARY
+- BUSYBOX BINARY
+- XPOSED
+- RESETPROP(EXPERIMENTAL)
+- WRONG PATH PERMITION
+- HOOKS
 
 ### False positives
 
@@ -67,11 +66,13 @@ This is cause the manufacturer of the device rom has left the busybox binary.
 This alone doesn't mean that the device is rooted.
 
 The following devices are known have the busybox binary on the stock rom:
-* Part of the OnePlus Devices
-* Part of the Xiaomi Devices
+
+- Part of the OnePlus Devices
+- Part of the Xiaomi Devices
 
 ### Thanks
-* [Dmitrii Kozhevin](mailto://kozhevin.dima@gmail.com) for native [C module](https://github.com/DimaKoz/meat-grinder)
+
+- [Dmitrii Kozhevin](mailto://kozhevin.dima@gmail.com) for native [C module](https://github.com/DimaKoz/meat-grinder)
 
 ## Contributing
 
