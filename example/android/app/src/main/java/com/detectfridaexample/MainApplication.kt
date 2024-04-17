@@ -1,3 +1,7 @@
+/*
+Copyright (c) 2024  Anshul Thakur <anshulthakur939@gmail.com>
+ */
+
 package com.detectfridaexample
 
 import android.app.Application
