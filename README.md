@@ -49,8 +49,7 @@ interface RootCheckResult {
 
 ### Screenshot
 
-![Circle of Trust](./apk/app.png)
-
+<img src="https://raw.githubusercontent.com/imanshul/react-native-detect-frida/main/apk/app.png" width="300" height="600" alt="demo" />
 
 
 # Root checks
