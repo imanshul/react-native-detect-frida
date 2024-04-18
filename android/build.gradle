@@ -1,6 +1,6 @@
 buildscript {
   // Buildscript is evaluated before everything else so we can't use getExtOrDefault
-  def kotlin_version = rootProject.ext.has("kotlinVersion") ? rootProject.ext.get("kotlinVersion") : project.properties["DetectFrida_kotlinVersion"]
+  def kotlin_version = rootProject.ext.has("kotlinVersion") ? rootProject.ext.get("kotlinVersion") : rootProject.hasProperty("kotlinVersion") ? rootProject.properties["kotlinVersion"] : project.properties["DetectFrida_kotlinVersion"]
 
   repositories {
     google()
@@ -26,7 +26,7 @@ if (isNewArchitectureEnabled()) {
 }
 
 def getExtOrDefault(name) {
-  return rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties["DetectFrida_" + name]
+  return rootProject.ext.has(name) ? rootProject.ext.get(name) : rootProject.hasProperty(name) ? rootProject.properties[name] : project.properties["DetectFrida_" + name]
 }
 
 def getExtOrIntegerDefault(name) {
@@ -89,13 +89,14 @@ repositories {
 }
 
 def kotlin_version = getExtOrDefault("kotlinVersion")
+def androidX_version = getExtOrDefault("androidxVersion")
 
 dependencies {
   // For < 0.71, this will be from the local maven repo
   // For > 0.71, this will be replaced by `com.facebook.react:react-android:$version` by react gradle plugin
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
-  implementation "androidx.core:core-ktx:1.12.0"
+  implementation "androidx.core:core-ktx:$androidX_version"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 

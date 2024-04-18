@@ -1,10 +1,10 @@
 # react-native-detect-frida
 
+[![Version](https://img.shields.io/npm/v/react-native-detect-frida)](https://www.npmjs.com/package/react-native-detect-frida)
+
 A React-Native library to detect if frida server is running or not
 
 Remember! Detecting and hiding root are a cat and mouse game.
-
-Platform Supported: Android
 
 <a href="https://www.buymeacoffee.com/anshulthakur" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
@@ -28,6 +28,7 @@ const result = await isDeviceRooted();
 | ---------------- | -------------------------- | -------------------------------------------------------------- |
 | `isDeviceRooted` | `Promise<RootCheckResult>` | Returns promise containing key whether device is rooted or not |
 
+
 ```ts
 interface CheckStatus {
   id: number;
@@ -40,6 +41,17 @@ interface RootCheckResult {
   checkStatus: CheckStatus[];
 }
 ```
+
+### Platform Supported:
+
+- [x] Android
+- [ ] iOS
+
+### Screenshot
+
+![Circle of Trust](./apk/app.png)
+
+
 
 # Root checks
 
@@ -104,4 +116,4 @@ SOFTWARE.
 
 ---
 
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+Made with :heart: by [Anshul Thakur](https://in.linkedin.com/in/anshul-thakur)
