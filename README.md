@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/npm/v/react-native-detect-frida)](https://www.npmjs.com/package/react-native-detect-frida)
 
-A React-Native library to detect if frida server is running or not
+A React-Native library to detect whether device is rooted or not.
 
 Remember! Detecting and hiding root are a cat and mouse game.
 
@@ -88,6 +88,10 @@ The following devices are known have the busybox binary on the stock rom:
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+
+### ⭐️ Show Your Support
+
+If you find this library helpful, please consider giving it a star on GitHub. It helps to support the project and is greatly appreciated. Thank you! 🌟
 
 ## License
 
