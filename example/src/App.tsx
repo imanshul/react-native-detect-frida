@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { FlatList, Platform, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Platform, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { isDeviceRooted } from 'react-native-detect-frida';
 
 export default function App() {
@@ -12,16 +12,17 @@ export default function App() {
   };
 
   React.useEffect(() => {
-    if (isAndroid()) {
-      isDeviceRooted()
-        .then((result) => {
-          setRooted(result.isRooted ? 'Rooted' : 'Not Rooted');
+    isDeviceRooted()
+      .then((result) => {
+        setRooted(result.isRooted ? 'Rooted' : 'Not Rooted');
+
+        if (isAndroid()) {
           setCheckStatus(result.checkStatus);
-        })
-        .catch((e) => {
-          setRooted('Error: ' + e);
-        });
-    }
+        }
+      })
+      .catch((e) => {
+        setRooted('Error: ' + e);
+      });
   }, []);
 
   const _renderItem = (item: CheckStatus) => {
@@ -41,14 +42,15 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.subHeader}>Welcome to react-native-detect-frida</Text>
       <Text style={styles.header}>{rooted}</Text>
       <FlatList
         data={checkStatus}
         keyExtractor={(item, index) => (item.id + index).toString()}
         renderItem={({ item }) => _renderItem(item)}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -60,6 +62,11 @@ const styles = StyleSheet.create({
   header: {
     fontWeight: 'bold',
     fontSize: 20,
+    color: 'black',
+    textAlign: 'center',
+  },
+  subHeader: {
+    fontSize: 16,
     color: 'black',
     textAlign: 'center',
   },

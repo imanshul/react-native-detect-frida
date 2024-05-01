@@ -38,21 +38,25 @@ interface CheckStatus {
 
 interface RootCheckResult {
   isRooted: boolean;
-  checkStatus: CheckStatus[];
+  checkStatus: CheckStatus[]; //Android Only
 }
 ```
 
 ### Platform Supported:
 
 - [x] Android
-- [ ] iOS
+- [x] iOS
 
 ### Screenshot
 
-<img src="https://raw.githubusercontent.com/imanshul/react-native-detect-frida/main/apk/app.png" width="300" height="600" alt="demo" />
 
+| Android           | iOS                    |
+| ---------------- | -------------------------- |
+| <img src="https://raw.githubusercontent.com/imanshul/react-native-detect-frida/main/apk/app.png" width="200" height="400" alt="demo" /> | <img src="https://raw.githubusercontent.com/imanshul/react-native-detect-frida/main/apk/ios.png" width="200" height="400" alt="demo" /> |
 
 # Root checks
+
+### Android
 
 These are the native checks:
 
@@ -69,6 +73,17 @@ These are the native checks:
 - RESETPROP(EXPERIMENTAL)
 - WRONG PATH PERMITION
 - HOOKS
+
+### iOS
+
+These are the checks that library detects in iOS while determining whether the device is rooted or not:
+
+- Cydia Installed
+- Undecimus Installed
+- Sileo Installed
+- Zbra Installed
+- System path for Cydia/Shadow etc like tools
+- Suspecious object classes
 
 ### False positives
 
