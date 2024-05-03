@@ -42,6 +42,18 @@ interface RootCheckResult {
 }
 ```
 
+In iOS please add this to your info.plist in order to detect the app installed
+```xml
+<key>LSApplicationQueriesSchemes</key>
+<array>
+  <string>cydia</string>
+  <string>undecimus</string>
+  <string>sileo</string>
+  <string>zbra</string>
+  <string>filza</string>
+</array>
+```
+
 ### Platform Supported:
 
 - [x] Android
