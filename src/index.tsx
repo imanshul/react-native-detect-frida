@@ -25,6 +25,6 @@ export function isDeviceRooted(): Promise<RootCheckResult> {
   if (isAndroid()) {
     return DetectFrida.detectRoot();
   } else {
-   return DetectFrida.isJailBroken()
+    return DetectFrida.isJailBroken();
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "react-native-detect-frida",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A React-Native library to detect if frida server is running or not",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -36,8 +36,13 @@
   },
   "keywords": [
     "react-native",
-    "ios",
-    "android"
+    "react-native-detect-frida",
+    "react-native-frida",
+    "detect-frida",
+    "frida",
+    "detect-frida-server",
+    "frida-root-detection",
+    "react-native-prevent-frida-bypass"
   ],
   "repository": {
     "type": "git",

@@ -4,6 +4,7 @@ interface CheckStatus {
   state: boolean;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface RootCheckResult {
   isRooted: boolean;
   checkStatus: CheckStatus[];

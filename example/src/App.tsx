@@ -1,6 +1,13 @@
 import * as React from 'react';
 
-import { FlatList, Platform, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import {
+  FlatList,
+  Platform,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import { isDeviceRooted } from 'react-native-detect-frida';
 
 export default function App() {
@@ -25,15 +32,21 @@ export default function App() {
       });
   }, []);
 
+  const getItemStateColor = (state: boolean) => {
+    return state ? 'red' : 'green';
+  };
+
   const _renderItem = (item: CheckStatus) => {
     return (
       <View style={styles.itemStyle}>
-        <Text style={{ textTransform: 'capitalize' }}>{item.name}</Text>
+        <Text style={styles.itemTextStyle}>{item.name}</Text>
         <Text
-          style={{
-            color: item.state ? 'red' : 'green',
-            textTransform: 'capitalize',
-          }}
+          style={[
+            styles.itemTextStyle,
+            {
+              color: getItemStateColor(item.state),
+            },
+          ]}
         >
           {item.state ? 'Detected' : 'Secured'}
         </Text>
@@ -74,5 +87,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+  },
+  itemTextStyle: {
+    textTransform: 'capitalize',
   },
 });
