@@ -943,7 +943,7 @@ PODS:
   - React-Mapbuffer (0.73.6):
     - glog
     - React-debug
-  - react-native-detect-frida (0.1.4):
+  - react-native-detect-frida (0.1.5):
     - glog
     - hermes-engine
     - RCT-Folly (= 2022.05.16.00)
@@ -1416,7 +1416,7 @@ SPEC CHECKSUMS:
   React-jsitracing: 4fed160d939e93a39049481f47744af246a7ac2c
   React-logger: 3eb80a977f0d9669468ef641a5e1fabbc50a09ec
   React-Mapbuffer: 84ea43c6c6232049135b1550b8c60b2faac19fab
-  react-native-detect-frida: 5862ec589036a9d079b89c9e9f1492e703739ec2
+  react-native-detect-frida: fd739334c31f278235f28c126842fab57c585d04
   React-nativeconfig: b4d4e9901d4cabb57be63053fd2aa6086eb3c85f
   React-NativeModulesApple: cd26e56d56350e123da0c1e3e4c76cb58a05e1ee
   React-perflogger: 5f49905de275bac07ac7ea7f575a70611fa988f2
@@ -1441,8 +1441,8 @@ SPEC CHECKSUMS:
   React-utils: d16c1d2251c088ad817996621947d0ac8167b46c
   ReactCommon: 2aa35648354bd4c4665b9a5084a7d37097b89c10
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
-  Yoga: d17d2cc8105eed528474683b42e2ea310e1daf61
+  Yoga: 805bf71192903b20fc14babe48080582fee65a80
 
 PODFILE CHECKSUM: c85401d96f9df53b24db7c1bf8cd6f0ad8bde847
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2
