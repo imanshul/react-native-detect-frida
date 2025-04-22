@@ -1,5 +1,5 @@
 import { NativeModules, Platform } from 'react-native';
-import { RootCheckResult } from './ValueTypes';
+import type { RootCheckResult } from './ValueTypes';
 
 const LINKING_ERROR =
   `The package 'react-native-detect-frida' doesn't seem to be linked. Make sure: \n\n` +
