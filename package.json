@@ -1,6 +1,6 @@
 {
   "name": "react-native-detect-frida",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A React-Native library to detect if frida server is running or not",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
