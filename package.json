@@ -168,6 +168,11 @@
     "jsSrcsDir": "src",
     "android": {
       "javaPackageName": "com.detectfrida"
+    },
+    "ios": {
+      "modulesProvider": {
+        "DetectFrida": "DetectFrida"
+      }
     }
   }
 }
