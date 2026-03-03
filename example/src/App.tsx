@@ -8,7 +8,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import { isDeviceRooted } from 'react-native-detect-frida';
+import { isDeviceRooted, type CheckStatus } from 'react-native-detect-frida';
 
 export default function App() {
   const [rooted, setRooted] = React.useState<string | undefined>();

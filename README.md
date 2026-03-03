@@ -8,6 +8,11 @@ Remember! Detecting and hiding root are a cat and mouse game.
 
 <a href="https://www.buymeacoffee.com/anshulthakur" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
+## 🚀 What’s New
+### ✨ v0.1.7 🆕
+- Added support for **React Native New Architecture** (TurboModules & Codegen compatible)
+- Added support for **Android 16KB page size builds**
+
 ## Installation
 
 ```sh

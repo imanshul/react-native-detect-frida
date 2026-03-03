@@ -1,6 +1,6 @@
 {
   "name": "react-native-detect-frida",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A React-Native library to detect if frida server is running or not",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -166,13 +166,13 @@
     "name": "RNDetectFridaSpec",
     "type": "modules",
     "jsSrcsDir": "src",
-    "outputDir": {
-      "ios": "ios/generated",
-      "android": "android/generated"
-    },
-    "includesGeneratedCode": true,
     "android": {
       "javaPackageName": "com.detectfrida"
+    },
+    "ios": {
+      "modulesProvider": {
+        "DetectFrida": "DetectFrida"
+      }
     }
   }
 }

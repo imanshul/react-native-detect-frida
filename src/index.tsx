@@ -1,22 +1,12 @@
 import { NativeModules, Platform } from 'react-native';
 import type { RootCheckResult } from './ValueTypes';
+import NativeDetectFrida from './NativeDetectFrida';
 
-const LINKING_ERROR =
-  `The package 'react-native-detect-frida' doesn't seem to be linked. Make sure: \n\n` +
-  Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
-  '- You rebuilt the app after installing the package\n' +
-  '- You are not using Expo Go\n';
+export type { CheckStatus, RootCheckResult } from './ValueTypes';
 
-const DetectFrida = NativeModules.DetectFrida
-  ? NativeModules.DetectFrida
-  : new Proxy(
-      {},
-      {
-        get() {
-          throw new Error(LINKING_ERROR);
-        },
-      }
-    );
+const DetectFrida = NativeDetectFrida
+  ? NativeDetectFrida
+  : NativeModules.DetectFrida;
 
 const isAndroid = () => {
   return Platform.OS === 'android';
