@@ -2,6 +2,8 @@
 #import "JailBrokenHelper.h"
 
 @implementation DetectFrida
+
+
 RCT_EXPORT_MODULE()
 
 // Example method
@@ -47,6 +49,18 @@ RCT_EXPORT_METHOD(multiply:(double)a
 RCT_REMAP_METHOD(isJailBroken,
                  isJailBrokenWithResolver:(RCTPromiseResolveBlock)resolve
                  rejecter:(RCTPromiseRejectBlock)reject) {
+    [self isJailBroken: resolve reject:reject];
+}
+
+RCT_EXPORT_METHOD(closeAppAfterDelay:(double)delay) {
+    [self closeApp:delay];
+}
+
+- (void)detectRoot:(nonnull RCTPromiseResolveBlock)resolve reject:(nonnull RCTPromiseRejectBlock)reject {
+    reject(@"-1", @"This function is only for Android", nil);
+}
+
+- (void)isJailBroken:(nonnull RCTPromiseResolveBlock)resolve reject:(nonnull RCTPromiseRejectBlock)reject {
     @try {
         BOOL isJailBroken = [self isJailBroken];
         resolve(@{@"isRooted": @(isJailBroken)});
@@ -57,10 +71,11 @@ RCT_REMAP_METHOD(isJailBroken,
     }
 }
 
-RCT_EXPORT_METHOD(closeAppAfterDelay:(double)delay) {
-    [self closeApp:delay];
+#ifdef RCT_NEW_ARCH_ENABLED
+
+- (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:(const facebook::react::ObjCTurboModule::InitParams &)params {
+  return std::make_shared<facebook::react::NativeDetectFridaSpecJSI>(params);
 }
 
-
-
+#endif
 @end
