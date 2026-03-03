@@ -6,6 +6,8 @@
 
 cmake_minimum_required(VERSION 3.4.1)
 
+# Enable 16KB page size support for Android 15+
+set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-z,max-page-size=16384")
 
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
