@@ -944,7 +944,7 @@ PODS:
   - React-Mapbuffer (0.73.6):
     - glog
     - React-debug
-  - react-native-detect-frida (0.1.6):
+  - react-native-detect-frida (0.1.7):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
@@ -1351,7 +1351,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 85583ef014ce53d731a98c66a0e24496f7a83066
   React-logger: 55764cd993880c6f887505854581c9faf68feff2
   React-Mapbuffer: 15dfcfeb4428d8799cce75e7fe85b18b706029e0
-  react-native-detect-frida: bcde86b231319f29e36048934eb69a9e76f5b43a
+  react-native-detect-frida: 83e727ee6957dfdeae95e7a045a2fb10976e90a3
   React-nativeconfig: b4d4e9901d4cabb57be63053fd2aa6086eb3c85f
   React-NativeModulesApple: 541d64309a3037060cc416db5c8a63ee5884048e
   React-perflogger: 5f49905de275bac07ac7ea7f575a70611fa988f2
