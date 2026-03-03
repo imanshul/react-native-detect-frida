@@ -28,6 +28,9 @@ add_library( # Sets the name of the library.
         # Provides a relative path to your source file(s).
         ${SOURCE_LIB})
 
+# Enable 16KB page size support for Android 15+
+target_link_options(native-lib PRIVATE -Wl,-z,max-page-size=16384)
+
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
 # default, you only need to specify the name of the public NDK library
